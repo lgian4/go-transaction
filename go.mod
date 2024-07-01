@@ -1,4 +1,4 @@
-module finance
+module go_transaction
 
 go 1.22.4
 

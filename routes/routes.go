@@ -1,7 +1,7 @@
 package routes
 
 import (
-	transactionController "finance/controller/transactions"
+	transactionController "go_transaction/controller/transactions"
 
 	"github.com/gin-gonic/gin"
 )

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"finance/db"
+	"go_transaction/db"
 )
 
 type Transaction struct {

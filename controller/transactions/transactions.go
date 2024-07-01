@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"finance/models"
+	"go_transaction/models"
 
 	"github.com/gin-gonic/gin"
 )

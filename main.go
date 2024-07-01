@@ -1,10 +1,10 @@
 package main
 
 import (
-	"finance/config"
-	"finance/db"
-	"finance/routes"
 	"fmt"
+	"go_transaction/config"
+	"go_transaction/db"
+	"go_transaction/routes"
 	"log"
 	"net/http"
 
@@ -32,5 +32,4 @@ func main() {
 
 	server.Run(fmt.Sprintf("%v:%v", CONFIG.Host, CONFIG.Port))
 
-	
 }

@@ -3,7 +3,7 @@ package middlewares
 import (
 	"net/http"
 
-	"finance/utils"
+	"go_transaction/utils"
 
 	"github.com/gin-gonic/gin"
 )
