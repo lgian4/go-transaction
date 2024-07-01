@@ -1,0 +1,6 @@
+*.db
+*.json
+*.yaml
+*.txt
+.env
+go.sum
