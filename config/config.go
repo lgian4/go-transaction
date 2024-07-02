@@ -11,14 +11,15 @@ import (
 )
 
 type Config struct {
-	Host    string `validate:"required"`
-	Port    int64  `validate:"required,numeric"`
-	DbName  string `validate:"required"`
-	GinMode string `validate:"required"`
+	Host        string `validate:"required"`
+	Port        int64  `validate:"required,numeric"`
+	DbName      string `validate:"required"`
+	GinMode     string `validate:"required"`
+	LogFilename string `validate:"required"`
 }
 
-func Load() (Config, error) {
-	err := godotenv.Load()
+func Load(filename string) (Config, error) {
+	err := godotenv.Load(filename)
 	if err != nil {
 		log.Fatalf("Error loading .env file")
 	}
@@ -30,11 +31,15 @@ func Load() (Config, error) {
 	}
 	dbName := os.Getenv("DB_NAME")
 	ginMode := os.Getenv("GIN_MODE")
+	LogFilename := os.Getenv("LOG_FILENAME")
+
 	config = Config{
-		Host:    host,
-		Port:    port,
-		DbName:  dbName,
-		GinMode: ginMode}
+		Host:        host,
+		Port:        port,
+		DbName:      dbName,
+		GinMode:     ginMode,
+		LogFilename: LogFilename,
+	}
 	validate := validator.New()
 	err = validate.Struct(config)
 	if err != nil {

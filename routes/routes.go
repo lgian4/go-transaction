@@ -7,6 +7,10 @@ import (
 )
 
 func RegisterRoutes(server *gin.Engine) {
+
+	server.Use(gin.Logger())
+	server.Use(gin.Recovery())
+
 	transactions := server.Group("/transactions")
 
 	transactions.GET("/", transactionController.GetAll)
